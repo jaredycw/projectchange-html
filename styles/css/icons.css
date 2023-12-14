@@ -1,0 +1,33 @@
+@import url(./style.css);
+
+.site-header .logo .ch-1 {
+    fill: #063853;
+    transition:all 0.5s ease-in-out;
+}
+.site-header .logo .ch-2 {
+    fill: #d76608;
+    transition:all 0.5s ease-in-out;
+}
+.site-header .logo .ch-3 {
+    fill: #80ac1f;
+    transition:all 0.5s ease-in-out;
+}
+.site-header .logo .ch-4 {
+    fill: #013854;
+    transition:all 0.5s ease-in-out;
+}
+.btf-left{
+    fill: #d76608;
+    transition:all 0.3s ease-in-out;
+}
+.btf-rights{
+    fill: #80ac1f;
+    transition:all 0.3s ease-in-out;
+}
+.btf-left:hover{
+    fill: #80ac1f;
+}
+.btf-rights:hover{
+
+    fill: #d76608;
+}

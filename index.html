@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/fonts/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Project Change Preview File</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" async></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" async></script>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.22 166.07" style="display: none;">
+      <symbol id="logo-btf" class="logo-btf" viewBox="0 0 175.22 166.07">
+        <path class="btf-left" d="M113.71,81.22l48.57-11.93c7.23-2.07,12.93-5.43,12.93-12.12V10.89c0-6.69-4.82-12.71-12.93-10.37-8.12,2.34-49.86,13.86-49.86,13.86-7.05,1.71-11.05,4.85-12.74,10.17l-21.17,57.97c-1.17,3.19-1.08,6.71,.24,9.84l21.37,50.81c1.85,4.49,6,7,12.3,8.53,0,0,41.74,11.52,49.86,13.86,8.12,2.34,12.93-3.68,12.93-10.37v-45.17c0-6.69-5.7-10.05-12.93-12.12l-49.22-12.08c-.57-.17-1.55-.64-1.55-2.04,0-2,2.16-2.53,2.19-2.54Z"/>
+      <path class="btf-rights" d="M61.51,81.22l-48.57-11.93c-7.23-2.07-12.93-5.43-12.93-12.12V10.89C0,4.19,4.82-1.82,12.93,.51c8.12,2.34,49.86,13.86,49.86,13.86,7.05,1.71,11.05,4.85,12.74,10.17l21.17,57.97c1.17,3.19,1.08,6.71-.24,9.84l-21.37,50.81c-1.85,4.49-6,7-12.3,8.53,0,0-41.74,11.52-49.86,13.86-8.12,2.34-12.93-3.68-12.93-10.37v-45.17c0-6.69,5.7-10.05,12.93-12.12l49.22-12.08c.57-.17,1.55-.64,1.55-2.04,0-2-2.16-2.53-2.19-2.54Z"/>
+      </symbol>
+    </svg>  
+
+  </head>
+  <body>
+
+    <header id="masthead" class="site-header" style="top:0px">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col col-lg-3">
+            <a href="/" class="logo" alt="logo">
+
+              <svg class="logo" id="logo" data-name="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.22 80">
+                <g id="logo_layer" data-name="logo_layer">
+                  <g>
+                    <g>
+                      <path class="ch-2" d="M34.7,15.89c-.19-.2-.48-.44-.87-.74-.39-.39-.68-.64-.87-.74l-.09,9.34-4.08-.04-.06,6.13c-.01,1.07,.47,1.56,1.44,1.47h.88c.87,.02,1.36-.37,1.47-1.14,.1-.49,.21-1.46,.32-2.92,.1-.58,.16-.97,.16-1.17,.29,.1,.73,.3,1.31,.59,.58,.2,1.02,.4,1.31,.6,0,.1,0,.19,0,.29-.21,2.04-.42,3.35-.62,3.93-.41,1.94-1.73,2.9-3.97,2.88l-1.61-.02c-2.82,.07-4.17-1.21-4.05-3.83l.07-6.85-2.33-.02v1.02c-.05,4.38-2.37,7.86-6.97,10.44l-2.31-2.65,.44-.14-1.17,.28-.42-1.9c-5.36,.53-9.4,1.03-12.12,1.49l-.55-3.22c.49,0,1.26-.08,2.34-.27,1.55-.08,2.77-.17,3.65-.26l.07-7.29-1.9-.02-.02,2.04-2.63-.03,.16-16.78,4.52,.04,.06-6.42,3.21,.03-.06,6.42,4.52,.04-.07,6.71c2.35-2.12,3.99-4.78,4.89-7.98l3.05,1.05c-1,2.91-2.04,5.09-3.13,6.54l12.98,.13c-2.02-2.35-3.6-5.04-4.74-8.07l-6.42-.06,.03-3.21,8.75,.09h.15s0,.15,0,.15c1.7,4.68,4,8.26,6.9,10.72-.5,.78-1.04,1.89-1.64,3.34ZM4.27,9.61l-.08,8.17,2.33,.02,.08-8.17-2.33-.02Zm7,.07l-2.34-.02-.08,8.17,2.34,.02,.08-8.17Zm4.17,6.61c-.48-1.17-1-2.15-1.58-2.93l-.09,9.63-2.62-.03,.02-1.75-2.04-.02-.07,7,2.92-.26c-.09-.49-.23-1.17-.42-2.05-.28-.88-.47-1.51-.57-1.9l2.49-.56c.75,2.83,1.45,5.46,2.11,7.9,2.54-1.34,3.97-3.56,4.3-6.67,0-.29,0-.63,.01-1.02l-3.21-.03,.08-8.46-1.32,1.15Zm4.67-.54l-.05,4.96,9.48,.09,.05-4.96-9.48-.09Z" />
+                      <path class="ch-2" d="M44.72,30.57c-.1-.1-.24-.29-.43-.59-.67-.88-1.25-1.57-1.73-2.06,3.81-1.72,6.8-3.92,8.96-6.63l3.64,.62c-.1,.19-.3,.43-.59,.72-.3,.39-.54,.68-.74,.87l20.13,.2-.03,2.63-3.5-.03c-1.97,1.93-4.26,3.46-6.9,4.6,3.3,.62,7.62,1.09,12.97,1.44-.59,1.06-1.04,2.08-1.34,3.05-7.58-.76-13.02-1.73-16.31-2.93-4.2,1.32-9.51,2.29-15.93,2.91-.1-.2-.24-.49-.43-.88-.09-.29-.43-.98-1-2.05,3.8-.26,8.13-.75,13-1.48-2.03-1.19-3.72-2.37-5.07-3.55-1.37,1.15-2.94,2.21-4.7,3.16Zm-2.47-16.07l-.41-2.63,1.75-.13c.88-.87,1.77-1.88,2.66-3.04-.29-.2-.73-.49-1.3-.89-1.35-.89-2.37-1.58-3.04-2.07l1.62-2.03c.09,.1,.24,.2,.43,.29,.19,.2,.34,.35,.43,.44,1.08-1.35,2.02-2.66,2.81-3.91l2.61,1.19c-1.08,1.35-2.21,2.7-3.4,4.05l1.45,.89c.89-1.06,1.72-2.12,2.51-3.18l2.47,1.48c-.49,.58-1.33,1.5-2.51,2.75-1.67,1.74-2.9,3.04-3.69,3.9l3.5-.11-.71-2.05,2.05-.71c.29,.68,.62,1.56,1,2.63,.38,1.17,.71,2.05,1,2.64l-2.2,.71c0-.1-.05-.29-.14-.59-.1-.19-.19-.34-.29-.44-.58,0-1.17,.04-1.75,.13l-.08,7.73-2.63-.03,.07-7.44c-1.66,.08-3.07,.21-4.24,.4Zm1.83,6.44l-2.18-.61c.6-1.45,1.1-3.05,1.5-4.8l2.04,.46c-.1,.39-.25,.97-.45,1.74-.31,1.36-.61,2.43-.91,3.2Zm7.3-.51c-.1-.2-.19-.54-.28-1.02-.28-1.07-.71-2.24-1.28-3.51l1.9-.57c.57,1.27,1.14,2.78,1.71,4.54l-2.05,.56Zm1.11,5.7c1.45,1.18,3.62,2.37,6.53,3.56,2.54-1.04,4.74-2.19,6.6-3.44l-13.13-.13Zm13.1-11.84l-.41-2.63,1.9,.02c.1-.09,.2-.24,.3-.43,.59-.58,1.28-1.4,2.07-2.46-1.16-.98-2.51-1.92-4.06-2.81v1.02s-11.82-.12-11.82-.12l.02-2.19,11.82,.11v1.02s1.47-1.88,1.47-1.88l.73,.44c1.18-1.35,2.16-2.65,2.96-3.91l2.61,1.2c-.59,.77-1.68,2.03-3.25,3.76-.1,.1-.2,.2-.3,.29,.58,.4,1.11,.74,1.6,1.04l2.51-3.18,2.47,1.48c-2.36,2.51-4.42,4.62-6.19,6.36l3.5-.11-.86-1.91,2.05-.71c.57,1.17,1.24,2.74,2,4.69,0-.2,.09,0,.29,.58l-2.2,.86c-.09-.49-.28-.93-.57-1.32-.58,0-1.17,.04-1.75,.13l-.08,7.88-2.77-.03,.08-7.73c-1.56,.08-2.92,.26-4.09,.54Zm-11.2-4.05l.02-2.04,9.92,.1-.02,2.04-9.92-.1Zm-.03,3.36l.02-1.9,9.92,.1-.02,1.9-9.92-.1Zm-.07,7.29l.06-5.84,10.07,.1-.06,5.84-10.07-.1Zm.76-17.65l.02-1.89,8.9,.09-.02,1.89-8.9-.09Zm2.06,13.73l-.02,2.04,4.52,.04,.02-2.04-4.52-.04Zm10.32,3.75l-2.18-.61c.2-.58,.45-1.4,.75-2.47,.3-.97,.55-1.74,.75-2.33l2.04,.31c-.1,.29-.2,.73-.31,1.31-.4,1.46-.76,2.72-1.06,3.78Zm7.15-.52c-.19-.88-.52-2-.99-3.36-.19-.58-.33-.98-.43-1.17l1.9-.56c.57,1.27,1.14,2.78,1.71,4.54l-2.19,.56Z" />
+                      <path class="ch-3" d="M.05,54.24l.03-3.06,15.9,.15-.03,3.06L.05,54.24Zm1.12,5.26l.03-2.92,13.57,.13-.03,2.92-13.57-.13Zm-.05,5.25l.03-2.92,13.57,.13-.03,2.92-13.57-.13Zm.15,14.59l.12-12.25,12.98,.13-.12,12.11-3.5-.03,.02-1.61-5.98-.06-.02,1.75-3.5-.03Zm.74-30.63l.03-2.77,12.11,.12-.03,2.77-12.11-.12Zm2.85,21.47l-.05,4.67,5.98,.06,.05-4.67-5.98-.06Zm11.33-9.52l.04-3.65,7.59,.07,.12-12.11,3.94,.04-.12,12.11,7.59,.07-.04,3.65-7.59-.07-.18,18.97-3.94-.04,.18-18.97-7.59-.07Z" />
+                      <path class="ch-3" d="M41.03,79.15l-.26-2.77c.78,0,2.04-.03,3.79-.11,8.95-.01,15.47-.09,19.55-.25,0,.29,0,.73-.01,1.31-.1,.58-.15,1.02-.16,1.31-6.23,.03-13.86,.2-22.91,.51Zm.11-25.97l.02-2.19,9.63,.09,.02-1.6-7.73-.08,.02-2.04,7.73,.08,.02-2.33,3.5,.03-.02,2.33,8.17,.08-.04,3.65,2.04,.02-.02,2.19-2.04-.02-.04,3.79-8.17-.08-.02,1.61,8.75,.09-.02,1.75-8.75-.09-.02,1.75,10.21,.1-.02,2.04-23.2-.23,.02-2.04,9.48,.09,.02-1.75-8.32-.08,.02-1.75,8.32,.08,.02-1.61-7.88-.08,.02-2.04,7.88,.08,.02-1.75-9.63-.09Zm1.54,21.46l.09-8.9,19.69,.19-.09,8.9-19.69-.19Zm3.28-6.97l-.02,1.75,5.11,.05,.02-1.75-5.11-.05Zm-.03,3.35l-.02,1.75,5.11,.05,.02-1.75-5.11-.05Zm13.48-21.46l-5.1-.05-.02,1.6,5.11,.05,.02-1.6Zm-5.14,3.74l-.02,1.75,5.1,.05,.02-1.75-5.11-.05Zm4.96,14.49l-5.11-.05-.02,1.75,5.1,.05,.02-1.75Zm-5.14,3.3l-.02,1.75,5.1,.05,.02-1.75-5.1-.05Zm12.17,8.58c-.1-.39-.19-.93-.28-1.61-.19-.78-.33-1.37-.42-1.75,1.26,.01,2.48,.02,3.65,.04,1.65,.11,2.43-.42,2.35-1.58l.29-29.32,3.06,.03-.29,29.91c.16,2.92-1.16,4.36-3.98,4.34-1.27-.01-2.73-.03-4.38-.04Zm-.36-7.88l.23-23.34,2.92,.03-.23,23.34-2.92-.03Z" />
+                    </g>
+                    <g>
+                      <path class="ch-1" d="M91.65,34.44c-.32,0-.57-.1-.74-.29-.17-.19-.26-.43-.25-.72l.28-28.64c0-.32,.09-.58,.27-.77,.18-.19,.43-.28,.75-.28l11.14,.11c2.16,.02,4.04,.39,5.62,1.11,1.59,.72,2.81,1.77,3.68,3.17,.86,1.4,1.29,3.13,1.27,5.21-.02,2.07-.48,3.79-1.37,5.16-.89,1.37-2.14,2.39-3.74,3.08-1.6,.68-3.48,1.02-5.65,1l-7.76-.08-.11,10.96c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-2.32-.02Zm3.49-15.62l7.59,.07c2.16,.02,3.79-.44,4.88-1.4,1.09-.95,1.65-2.35,1.66-4.19,.02-1.81-.5-3.22-1.54-4.23-1.04-1-2.68-1.52-4.9-1.54l-7.59-.07-.11,11.36Z" />
+                      <path class="ch-1" d="M119.8,34.71c-.32,0-.57-.1-.74-.29-.17-.19-.26-.43-.25-.72l.28-28.64c0-.32,.09-.58,.27-.77,.18-.19,.43-.28,.75-.28l10.7,.1c3.3,.03,5.91,.83,7.83,2.4,1.91,1.57,2.86,3.87,2.83,6.91-.02,2.25-.6,4.08-1.74,5.49-1.14,1.41-2.68,2.38-4.61,2.92l6.64,11.73c.09,.17,.13,.34,.13,.48,0,.23-.1,.44-.29,.61-.19,.17-.4,.26-.64,.26l-2.11-.02c-.5,0-.86-.14-1.09-.41-.23-.26-.43-.53-.61-.8l-6.25-11.2-7.67-.07-.11,11.32c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-2.24-.02Zm3.45-16.02l7.24,.07c2.19,.02,3.83-.42,4.92-1.34,1.09-.91,1.65-2.27,1.66-4.08,.02-1.79-.5-3.15-1.56-4.1-1.06-.95-2.7-1.43-4.92-1.45l-7.24-.07-.11,10.97Z" />
+                      <path class="ch-1" d="M158.48,35.53c-2.49-.02-4.62-.48-6.39-1.36-1.77-.88-3.14-2.22-4.08-4.03-.95-1.81-1.47-4.07-1.56-6.79-.02-1.29-.02-2.52,0-3.71,.01-1.18,.04-2.42,.08-3.7,.14-2.69,.73-4.93,1.75-6.71,1.03-1.79,2.44-3.12,4.25-4,1.81-.87,3.89-1.3,6.26-1.28,2.4,.02,4.49,.49,6.28,1.4,1.79,.91,3.19,2.27,4.19,4.08,1.01,1.81,1.54,4.06,1.6,6.75,.05,1.29,.06,2.52,.05,3.71-.01,1.19-.05,2.42-.12,3.71-.11,2.72-.67,4.97-1.67,6.76-1,1.79-2.39,3.11-4.18,3.95-1.79,.84-3.95,1.26-6.46,1.23Zm.04-3.73c2.25,.02,4.09-.63,5.52-1.96,1.43-1.33,2.22-3.5,2.37-6.51,.07-1.32,.11-2.49,.12-3.53,0-1.04,0-2.2-.05-3.49-.04-2.02-.4-3.66-1.07-4.93-.68-1.26-1.58-2.19-2.71-2.79-1.14-.6-2.45-.9-3.94-.92-1.43-.01-2.72,.27-3.87,.84-1.15,.57-2.07,1.49-2.77,2.73-.7,1.25-1.1,2.89-1.21,4.9-.04,1.29-.07,2.45-.08,3.49-.01,1.04,0,2.21,.01,3.53,.09,3.01,.84,5.2,2.26,6.55,1.42,1.36,3.22,2.05,5.42,2.07Z" />
+                      <path class="ch-1" d="M186.29,35.8c-1.49-.01-2.9-.21-4.23-.59-1.33-.38-2.51-.96-3.54-1.74-1.03-.79-1.85-1.77-2.45-2.94-.6-1.17-.93-2.55-.97-4.13,0-.26,.09-.49,.27-.68,.18-.19,.41-.28,.7-.28l2.37,.02c.32,0,.58,.1,.77,.29,.19,.19,.31,.44,.36,.73,.1,1.32,.48,2.38,1.11,3.19,.64,.81,1.45,1.41,2.44,1.8,.99,.39,2.08,.59,3.28,.6,2.22,.02,3.93-.69,5.11-2.14,1.18-1.45,1.79-3.39,1.81-5.82l.15-15.57-15.57-.15c-.29,0-.53-.1-.72-.29-.19-.19-.28-.44-.28-.73l.02-1.8c0-.29,.1-.53,.29-.72,.19-.19,.43-.28,.73-.28l18.9,.18c.32,0,.58,.1,.76,.29,.19,.19,.28,.45,.28,.77l-.18,18.42c-.02,2.37-.5,4.43-1.42,6.17-.92,1.74-2.22,3.08-3.9,4.02-1.68,.93-3.71,1.39-6.11,1.37Z" />
+                      <path class="ch-1" d="M205.98,35.55c-.32,0-.57-.1-.74-.29-.17-.19-.26-.43-.26-.72l.28-28.64c0-.32,.09-.58,.27-.77,.18-.19,.43-.28,.75-.28l18.11,.18c.32,0,.57,.1,.74,.29,.17,.19,.26,.45,.26,.77l-.02,1.67c0,.32-.09,.57-.27,.74-.18,.18-.43,.26-.75,.26l-14.91-.15-.09,9.6,13.95,.14c.32,0,.57,.1,.74,.29,.17,.19,.26,.45,.25,.77l-.02,1.62c0,.29-.09,.53-.27,.72-.18,.19-.43,.28-.75,.28l-13.95-.14-.1,9.95,15.26,.15c.32,0,.57,.09,.74,.27,.17,.18,.26,.43,.26,.75l-.02,1.71c0,.29-.09,.53-.27,.72-.18,.19-.43,.28-.75,.28l-18.46-.18Z" />
+                      <path class="ch-1" d="M242.29,36.34c-2.69-.03-4.91-.54-6.67-1.55-1.76-1.01-3.08-2.41-3.97-4.21-.89-1.79-1.37-3.87-1.43-6.24-.02-1.2-.02-2.48,0-3.86,.01-1.37,.04-2.69,.08-3.95,.11-2.37,.63-4.44,1.55-6.21,.92-1.77,2.27-3.15,4.05-4.13,1.78-.98,4.01-1.45,6.7-1.43,2.02,.02,3.78,.32,5.3,.89,1.51,.57,2.77,1.33,3.77,2.27,1,.95,1.76,2,2.27,3.16,.51,1.16,.8,2.35,.84,3.58,.03,.27-.06,.48-.25,.66-.19,.17-.42,.26-.68,.26l-2.41-.02c-.26,0-.49-.08-.68-.23-.19-.14-.33-.41-.41-.79-.48-2.28-1.39-3.86-2.74-4.72-1.35-.86-3.05-1.3-5.1-1.32-2.34-.02-4.2,.62-5.59,1.94-1.39,1.31-2.15,3.44-2.3,6.36-.11,2.4-.13,4.85-.07,7.37,.09,2.93,.81,5.06,2.17,6.4,1.36,1.35,3.21,2.03,5.55,2.05,2.05,.02,3.75-.39,5.12-1.22,1.37-.83,2.31-2.39,2.83-4.66,.09-.38,.23-.64,.42-.78,.19-.14,.42-.22,.68-.21l2.41,.02c.26,0,.49,.09,.68,.27,.19,.18,.27,.4,.23,.66-.07,1.23-.37,2.42-.91,3.57-.54,1.15-1.32,2.19-2.33,3.11-1.02,.93-2.29,1.66-3.81,2.2-1.53,.54-3.3,.8-5.32,.78Z" />
+                      <path class="ch-1" d="M268.17,36.15c-.29,0-.53-.1-.72-.29-.19-.19-.28-.43-.28-.72l.25-25.79-8.42-.08c-.29,0-.53-.1-.72-.29-.19-.19-.28-.44-.28-.73l.02-1.84c0-.32,.1-.58,.29-.76,.19-.19,.43-.28,.73-.28l21.14,.21c.32,0,.58,.1,.77,.29,.19,.19,.28,.45,.28,.77l-.02,1.84c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-8.38-.08-.25,25.79c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-2.28-.02Z" />
+                      <path class="ch-1" d="M101.26,78.83c-2.69-.03-4.91-.54-6.67-1.56-1.76-1.01-3.08-2.41-3.97-4.21-.89-1.79-1.37-3.87-1.43-6.24-.02-1.2-.02-2.48,0-3.86,.01-1.37,.04-2.69,.08-3.95,.11-2.37,.63-4.44,1.55-6.21,.92-1.77,2.27-3.15,4.05-4.13,1.78-.98,4.01-1.45,6.7-1.42,2.02,.02,3.78,.31,5.3,.88,1.51,.57,2.77,1.33,3.77,2.28,1,.95,1.76,2,2.27,3.16,.51,1.16,.8,2.35,.84,3.58,.03,.26-.06,.48-.25,.66-.19,.17-.42,.26-.68,.26l-2.41-.02c-.26,0-.49-.08-.68-.23-.19-.15-.33-.41-.41-.79-.48-2.28-1.39-3.86-2.74-4.72-1.35-.86-3.05-1.3-5.1-1.32-2.34-.02-4.2,.63-5.59,1.94-1.39,1.32-2.15,3.44-2.3,6.36-.11,2.4-.13,4.85-.07,7.37,.09,2.93,.81,5.06,2.17,6.4,1.36,1.34,3.21,2.03,5.55,2.05,2.05,.02,3.75-.39,5.12-1.22,1.37-.83,2.31-2.39,2.83-4.66,.09-.38,.23-.64,.42-.79,.19-.14,.42-.22,.68-.21l2.41,.02c.26,0,.49,.09,.68,.27,.19,.18,.27,.4,.23,.66-.07,1.23-.37,2.42-.91,3.57-.54,1.15-1.32,2.19-2.33,3.11-1.02,.93-2.29,1.66-3.82,2.2-1.53,.54-3.3,.8-5.32,.78Z" />
+                      <path class="ch-4" d="M120.43,78.58c-.32,0-.57-.1-.74-.29-.17-.19-.26-.43-.26-.72l.28-28.64c0-.32,.09-.58,.27-.77,.18-.19,.43-.28,.75-.28l2.24,.02c.32,0,.58,.1,.76,.29,.19,.19,.28,.45,.28,.77l-.12,12.11,15.09,.15,.12-12.11c0-.32,.1-.57,.29-.77,.19-.19,.43-.28,.73-.28l2.24,.02c.32,0,.58,.1,.76,.29,.19,.19,.28,.45,.28,.77l-.28,28.64c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-2.24-.02c-.29,0-.53-.1-.72-.29-.19-.19-.28-.43-.28-.72l.12-12.59-15.09-.15-.12,12.59c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-2.24-.02Z" />
+                      <path class="ch-1" d="M148.63,78.85c-.23,0-.44-.09-.61-.27-.18-.18-.26-.38-.26-.62,0-.15,.02-.31,.05-.48l11.15-28.27c.12-.29,.28-.52,.49-.7,.21-.17,.51-.26,.92-.25l2.98,.03c.38,0,.68,.09,.9,.27,.22,.18,.38,.42,.5,.71l10.56,28.48c.06,.17,.09,.34,.08,.48,0,.23-.09,.44-.27,.61-.18,.17-.38,.26-.62,.26l-2.24-.02c-.35,0-.61-.09-.77-.27-.16-.18-.27-.34-.32-.49l-2.35-6.25-14.39-.14-2.47,6.2c-.03,.15-.14,.31-.31,.48-.18,.17-.44,.26-.79,.25l-2.24-.02Zm7.12-10.68l11.84,.12-5.77-15.63-6.07,15.51Z" />
+                      <path class="ch-1" d="M181.08,79.17c-.32,0-.57-.1-.74-.29-.17-.19-.26-.43-.26-.73l.28-28.64c0-.32,.09-.57,.27-.77,.18-.19,.43-.28,.75-.28l2.02,.02c.35,0,.61,.08,.79,.25,.17,.16,.27,.29,.3,.37l14.34,22.51,.21-21.93c0-.32,.09-.57,.27-.77,.18-.19,.43-.28,.75-.28l2.11,.02c.32,0,.57,.1,.76,.29,.19,.19,.28,.45,.28,.77l-.28,28.6c0,.29-.1,.54-.29,.74-.19,.2-.43,.3-.73,.3l-2.1-.02c-.32,0-.56-.09-.72-.27-.16-.18-.27-.3-.33-.36l-14.3-22.29-.21,21.75c0,.29-.1,.53-.29,.72-.19,.19-.45,.28-.77,.28l-2.1-.02Z" />
+                      <path class="ch-1" d="M221.64,80c-2.57-.02-4.75-.53-6.54-1.51-1.79-.98-3.15-2.36-4.08-4.12-.93-1.76-1.45-3.83-1.54-6.2-.02-1.29-.02-2.65,0-4.1,.01-1.45,.04-2.83,.08-4.15,.14-2.37,.69-4.41,1.66-6.12,.97-1.72,2.36-3.05,4.18-3.99,1.82-.95,4.01-1.41,6.55-1.38,2.08,.02,3.87,.33,5.39,.93,1.51,.6,2.76,1.35,3.73,2.25,.97,.9,1.69,1.84,2.17,2.81,.47,.97,.72,1.82,.74,2.55,.03,.26-.05,.48-.23,.63-.18,.16-.41,.24-.7,.24l-2.59-.02c-.29,0-.5-.07-.63-.18-.13-.12-.25-.32-.37-.62-.25-.76-.68-1.51-1.27-2.25-.59-.73-1.39-1.35-2.39-1.84-1-.49-2.3-.75-3.87-.76-2.31-.02-4.18,.59-5.61,1.83-1.43,1.24-2.22,3.31-2.36,6.21-.11,2.6-.14,5.21-.08,7.81,.09,2.92,.84,5.03,2.26,6.31,1.42,1.29,3.28,1.94,5.6,1.96,1.55,.01,2.93-.25,4.15-.81,1.22-.56,2.18-1.43,2.9-2.63,.71-1.19,1.08-2.71,1.1-4.55l.02-1.84-6.58-.06c-.29,0-.53-.1-.72-.29-.19-.19-.28-.45-.28-.77v-1.4c.02-.32,.12-.57,.31-.77,.19-.19,.43-.28,.73-.28l9.91,.1c.32,0,.57,.1,.74,.29,.17,.19,.26,.45,.26,.77l-.04,4.21c-.02,2.4-.53,4.48-1.53,6.26-1,1.78-2.44,3.14-4.32,4.11-1.88,.96-4.12,1.43-6.72,1.4Z" />
+                      <path class="ch-1" d="M241.38,79.75c-.32,0-.57-.1-.74-.29-.17-.19-.26-.43-.26-.72l.28-28.64c0-.32,.09-.57,.27-.77,.18-.19,.43-.28,.75-.28l18.11,.18c.32,0,.57,.1,.74,.29,.17,.19,.26,.45,.26,.77l-.02,1.67c0,.32-.09,.57-.27,.74-.18,.18-.43,.26-.75,.25l-14.91-.15-.09,9.61,13.95,.14c.32,0,.57,.1,.74,.29,.17,.19,.26,.45,.25,.77l-.02,1.62c0,.29-.09,.53-.27,.72-.18,.19-.43,.28-.75,.28l-13.95-.14-.1,9.95,15.26,.15c.32,0,.57,.09,.74,.27,.17,.18,.26,.43,.26,.75l-.02,1.71c0,.29-.09,.53-.27,.72-.18,.19-.43,.28-.75,.28l-18.46-.18Z" />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="col col-lg-9">
+            <nav class="navigation" role="navigation" aria-label="main nav">
+              <ul class="main-nav-ul d-none d-xl-block">
+                <li>
+                  <a href="/">+(852) 9689 1439</a>
+                </li>
+                <li>
+                  <a href="/">Core Service</a>
+                </li>
+                <li>
+                  <a href="/">Support Us</a>
+                </li>
+              </ul>
+              <div class="nav-trigger hamburger d-inline-block">
+                <div id="hamburger" class="hamburger-box">
+                  <span class="hamburger-box-bar"></span>
+                  <span class="hamburger-box-bar"></span>
+                  <span class="hamburger-box-bar"></span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="overlay" class="overlay">
+      <div class="container">
+        <div class="overlay-content">
+          <ul class="overlay-menu">
+            <li>
+              <a href="">About Us</a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="">Our Story</a>
+                </li>
+                <li>
+                  <a href="">Our Team</a>
+                </li>
+                <li>
+                  <a href="">Our Advisors</a>
+                </li>
+                <li>
+                  <a href="">Faqs</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">News</a>
+            </li>
+            <li>
+              <a href="">Our Work</a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="">The Challenge</a>
+                </li>
+                <li>
+                  <a href="">Counselling</a>
+                </li>
+                <li>
+                  <a href="">Legal Support</a>
+                </li>
+                <li>
+                  <a href="">Reintegration</a>
+                </li>
+                <li>
+                  <a href="">Service FLow</a>
+                </li>
+                <li>
+                  <a href="">Success Stories</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">How You Can Help</a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="">Partner With Us</a>
+                </li>
+                <li>
+                  <a href="">Make A Donation</a>
+                </li>
+                <li>
+                  <a href="">Careers/Internships/Join Us</a>
+                </li>
+                <li>
+                  <a href="">Volunteer With Us</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">Our Partners</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="overlay-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="sns-widget">
+                <div class="float-left">
+                  <a href="https://www.facebook.com/projectchangehk/" target="_blank">
+                    <span class="icon-fb"></span>
+                  </a>
+                </div>
+                <div class="ms-2 float-left">
+                  <a href="https://www.instagram.com/projectchangehk/" target="_blank">
+                    <span class="icon-ig"></span>
+                  </a>
+                </div>
+                <div class="ms-2 float-left">
+                  <a href="https://t.me/projectchange" target="_blank">
+                    <span class="icon-tg"></span>
+                  </a>
+                </div>
+                <div class="ms-2 float-left">
+                  <a href="https://www.youtube.com/@projectchange1472" target="_blank">
+                    <span class="icon-youtube"></span>
+                  </a>
+                </div>
+                <div class="ms-2 float-left">
+                  <a href="https://www.linkedin.com/company/projectchangehk" target="_blank">
+                    <span class="icon-linkedin"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <p>
+                <a href="tel:+85296891439" target="_blank">(852) 9689 1439</a>
+                <br>
+                <a href="mailto:info@projectchange.hk" target="_blank">info@projectchange.hk</a>
+              </p>
+            </div>
+            <div class="col-lg-3">
+              <p>Room RD20, 12/F, 133 Wai Yip Street, Kwun Tong, Kowloon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <main id="primary" class="site-main">
+      <div class="container mt-5 pt-5">
+        <section class="hero-section mt-5 mb-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1 class="pj-blue-text display-3">IGNITE HOPE FOR</h1>
+              <h1 class="pj-orange-text display-3">YOUNG PEOPLE</h1>
+              <p class="pj-blue-text mt-3 mb-5"> Project Change are <strong>a multi-disciplinary non-profit initiative</strong>. Financially independent from the government, we offer <strong>complimentary services to youths arrested during the Hong Kong protests in 2019</strong>, including psychological counselling, legal support, and a comprehensive reintegration program. </p>
+            </div>
+            <div class="col">
+              <svg class="logo-btf float-end">
+                <use xlink:href="#logo-btf" />
+              </svg>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Carousel -->
+      <div id="bannerSliderInterval" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bannerSliderInterval" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#bannerSliderInterval" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#bannerSliderInterval" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#bannerSliderInterval" data-bs-slide-to="3"></button>
+        </div>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="./photo/Background_Video.png" alt="..." class="d-block" style="width:100%">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://via.placeholder.com/1280x720.png/000/fff" alt="..." class="d-block" style="width:100%">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://via.placeholder.com/1280x720.png/666666/fff" alt="..." class="d-block" style="width:100%">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://via.placeholder.com/1280x720.png/999999/fff" alt="..." class="d-block" style="width:100%">
+          </div>
+        </div>
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerSliderInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerSliderInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="container">
+        <section id="our-mission" class="our-mission mb-5">
+          <div class="row">
+            <div class="col-6 col-lg-6">
+              <h1 class="main-title mb-4">Our Mission</h1>
+              <img src="./photo/1x/pjc-sky.jpg" width="100%" class="mb-5" />
+            </div>
+            <div class="col-lg-6">
+              <p class="pj-dark-brown-text">Over 10,000 citizens have been arrested in Hong Kong for their participation in the 2019 anti-Extradition Bill protests, of which over 6,500 were under the age of 25 <br>
+                <br> Founded in 2020, Project Change’s mission is to support these 6,500 youths and their loved ones in overcoming hardships.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="seek-help" class="seek-help mb-5">
+          <h1>Seek Help</h1>
+          <div class="row">
+            <div class="col-lg-5 mb-5">
+              <p class="pj-dark-brown-text">Project Change supports youths under the age of 25 when they were arrested and are either facing trial or have been convicted.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-9 mb-4 contact-box ">
+              <p class="h3 mb-4">If you would like to enroll in our program or wish to refer a case to us, <br> please contact our hotline at </p>
+              <h1 class="display-4">(852) 9689 1439 </h1><button><span class="icon-arr-right"></span></button>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="latest-news" class="latest-news mb-5">
+          <h1>Latest News</h1>
+          
+          <div class="row">
+            <div class="col-lg-6 latest-left">
+              <div class="post-article">
+        
+                <figure class="work-box-overlay work-box-overlay1" >
+                  <a href="#post" target="_blank">
+                  <span class="work-box-bg"></span>
+                  <img src="./photo/1x/post-1.jpg" alt="Article 1">
+                  
+                  <figcaption>
+                    <div class="work-box-highlight">
+                        <p class="post-highlight pj-blue-text">Highlight</p>
+                    </div>
+                    <div class="work-box-title">
+                        <h2 class="post-title pj-white-text">Article 1 Title tessssssssssssssssssssssssssssssssssssssssssasdasdasda</h2>
+                        <p class=" post-date">Post Date:</p>
+                        <p class="post-desc pj-white-text">Article 1 Description</p>
+                    </div>
+                  </figcaption>
+                  </a>
+                </figure>
+        
+              </div>
+        
+              <div class="post-article">
+        
+                <figure class="work-box-overlay work-box-overlay1" >
+                  <a href="#post" target="_blank">
+                  <span class="work-box-bg"></span>
+                  <img src="./photo/1x/post-2.jpg" alt="Article 1">
+                  
+                  <figcaption>
+                    <div class="work-box-highlight">
+                        <p class="post-highlight pj-blue-text">Highlight</p>
+                    </div>
+                    <div class="work-box-title">
+                        <h2 class="post-title pj-white-text">Article 1 Title</h2>
+                        <p class=" post-date">Post Date:</p>
+                        <p class="post-desc pj-white-text">Article 1 Description</p>
+                    </div>
+                  </figcaption>
+                  </a>
+                </figure>
+        
+              </div>
+        
+            </div>
+            <div class="col-lg-6 latest-right">
+        
+        
+              <div class="post-article">
+                <div class="post-accordion">
+                <div class="row">
+                <div class="col-10">
+                <h2 class="post-title">Short Description: orem Ipsum issimply dummy text of the printing.</h2>
+                <p class=" post-date">Post Date:</p>
+                </div>
+                <div class="col-2">
+        
+                    <div class="accordion-wrapper">
+                        <div class="accordion-box">
+                        <span class="addion-bar"></span>
+                        <span class="addion-bar"></span>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        
+                </div>
+                <div class="post-panel">
+                <p class="post-desc">and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+                <p class="post-link"><a href="">Read More></a></p>
+                </div>
+              </div>
+        
+              <div class="post-article">
+                <div class="post-accordion">
+                <div class="row">
+                <div class="col-10">
+                <h2 class="post-title">Short Description: orem Ipsum issimply dummy text of the printing.</h2>
+                <p class=" post-date">Post Date:</p>
+                </div>
+                <div class="col-2">
+        
+                    <div class="accordion-wrapper">
+                        <div class="accordion-box">
+                        <span class="addion-bar"></span>
+                        <span class="addion-bar"></span>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        
+                </div>
+                <div class="post-panel">
+                <p class="post-desc">and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+                <p class="post-link"><a href="">Read More></a></p>
+                </div>
+              </div>
+        
+              <div class="post-article">
+                <div class="post-accordion">
+                <div class="row">
+                <div class="col-10">
+                <h2 class="post-title">Short Description: orem Ipsum issimply dummy text of the printing.</h2>
+                <p class=" post-date">Post Date:</p>
+                </div>
+                <div class="col-2">
+        
+                    <div class="accordion-wrapper">
+                        <div class="accordion-box">
+                        <span class="addion-bar"></span>
+                        <span class="addion-bar"></span>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        
+                </div>
+                <div class="post-panel">
+                <p class="post-desc">and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+                <p class="post-link"><a href="">Read More></a></p>
+                </div>
+              </div>
+        
+              <div class="post-article">
+                <div class="post-accordion">
+                <div class="row">
+                <div class="col-10">
+                <h2 class="post-title">Short Description: orem Ipsum issimply dummy text of the printing.</h2>
+                <p class=" post-date">Post Date:</p>
+                </div>
+                <div class="col-2">
+        
+                    <div class="accordion-wrapper">
+                        <div class="accordion-box">
+                        <span class="addion-bar"></span>
+                        <span class="addion-bar"></span>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        
+                </div>
+                <div class="post-panel">
+                <p class="post-desc">and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+                <p class="post-link"><a href="">Read More></a></p>
+                </div>
+              </div>
+            
+        
+              
+        
+            </div>
+          </div>
+
+
+
+
+        </section>
+
+
+        <div class="row newsletter-box mb-5 d-flex align-items-center">
+          <div class="col-lg-6">
+            <h1 class="mb-4">STAY UP TO DATE</h1>
+            <p class="pj-dark-brown-text">Get our latest insights, firm announcements and charitable Foundation Updates.</p>
+          </div>
+          <div class="col-lg-6 ">
+            <div class="btn-vcenter">
+              <button class="btn"> Sign Up for Updates </button>
+            </div>
+          </div>
+        </div>
+        <section id="our-works" class="our-works mb-5">
+          <h1>Our Work</h1>
+          <div class="row mt-3 mb-5">
+            <div class="col-lg-4 works-box">
+              <figure class="work-box-overlay work-box-overlay1">
+                <a href="#CounsellingService" target="_blank">
+                  <span class="work-box-bg"></span>
+                  <img src="./photo/works-box1.jpg">
+                  <figcaption>
+                    <h1 class="work-box-title pj-white-text">Counseling <Br>Services </h1>
+                  </figcaption>
+                </a>
+              </figure>
+            </div>
+            <div class="col-lg-4 works-box">
+              <figure class="work-box-overlay work-box-overlay1">
+                <a href="#LegalSupport" target="_blank">
+                  <span class="work-box-bg"></span>
+                  <img src="./photo/works-box2.jpg">
+                  <figcaption>
+                    <h1 class="work-box-title">Legal <Br>Support </h1>
+                  </figcaption>
+                </a>
+              </figure>
+            </div>
+            <div class="col-lg-4 works-box">
+              <figure class="work-box-overlay work-box-overlay1">
+                <a href="#ReintegrationProgram" target="_blank">
+                  <span class="work-box-bg"></span>
+                  <img src="./photo/works-box3.jpg">
+                  <figcaption>
+                    <h1 class="work-box-title pj-white-text">Reintegration <Br>Program </h1>
+                  </figcaption>
+                </a>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section id="testimonial-wrapper" class="testimonial-wrapper">
+          <h1>Success Stories</h1>
+          <div id="testimonialCarouselInterval" class="carousel slide mb-5 pb-5 mt-4" data-bs-ride="carousel"  >
+
+            <!-- Slides *CarouselInterval data-bs-ride="carousel" -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <!-- First testimonial -->
+                    <div class="testimonial">
+                      
+                      <figure class="work-box-overlay work-box-overlay1" >
+                        <a href="#post" target="_blank">
+                        <span class="work-box-bg"></span>
+                        <img src="./photo/1x/pjc-testi-1.jpg" alt="tick">
+                        
+                        <figcaption>
+                          <div class="work-box-title pj-white-text">
+                            <div class="quote">
+                              <span class="db-qta">“</span>
+                              <p class="quote-p">Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting, remaining
+                              essentially unchanged. </p>
+                              <span class="db-qta">”</span>
+                            </div>
+                          </div>
+                        </figcaption>
+                        </a>
+                      </figure>
+          
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <!-- Second testimonial -->
+                    <div class="testimonial">
+          
+                      <figure class="work-box-overlay work-box-overlay1" >
+                        <a href="#post" target="_blank">
+                        <span class="work-box-bg"></span>
+                        <img src="./photo/1x/pjc-testi-2.jpg" alt="tick">
+                        
+                        <figcaption>
+                          <div class="work-box-title pj-white-text">
+                            <div class="quote">
+                              <span class="db-qta">“</span>
+                              <p class="quote-p">Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting, remaining
+                              essentially unchanged. </p>
+                              <span class="db-qta">”</span>
+                            </div>
+                          </div>
+                        </figcaption>
+                        </a>
+                      </figure>        
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <!-- Third testimonial -->
+                    <div class="testimonial">
+          
+                      <figure class="work-box-overlay work-box-overlay1" >
+                        <a href="#post" target="_blank">
+                        <span class="work-box-bg"></span>
+                        <img src="./photo/1x/pjc-testi-1.jpg" alt="tick">
+                        
+                        <figcaption>
+                          <div class="work-box-title pj-white-text">
+                            <div class="quote">
+                              <span class="db-qta">“</span>
+                              <p class="quote-p">Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. </p>
+                              <span class="db-qta">”</span>
+                            </div>
+                          </div>
+                        </figcaption>
+                        </a>
+                      </figure>
+          
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <!-- Fourth testimonial -->
+                    <div class="testimonial">
+          
+                      <figure class="work-box-overlay work-box-overlay1" >
+                        <a href="#post" target="_blank">
+                        <span class="work-box-bg"></span>
+                        <img src="./photo/1x/pjc-testi-2.jpg" alt="tick">
+                        
+                        <figcaption>
+                          <div class="work-box-title pj-white-text">
+                            <div class="quote">
+                              <span class="db-qta">“</span>
+                              <p class="quote-p">Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting, remaining
+                              essentially unchanged.Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting, remaining
+                              essentially unchanged. </p>
+                              <span class="db-qta">”</span>
+                            </div>
+                          </div>
+                        </figcaption>
+                        </a>
+                      </figure>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          
+              <!-- Left and right controls/icons -->
+             
+              <!--make own icon CSS SNS Social Media
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="carousel-control-next-icon" aria-hidden="true"></span> 
+              -->
+              <div class="catest-control mt-4">
+                <button type="button" data-bs-target="#testimonialCarouselInterval" data-bs-slide="prev">
+                  <span class="icon-arr-left"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button type="button" data-bs-target="#testimonialCarouselInterval" data-bs-slide="next">
+                  <span class="icon-arr-right"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            
+             </div>
+        </section>
+
+      </div>
+    </main>
+    <footer id="colophon" class="site-footer mt-5">
+      <div class="container py-5 py-md-5">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="mb-5">
+              <img class="img-fluid float-left" src="./svg/follow-us.svg" width="400px" />
+            </div>
+            <div class="sns-widget mb-4">
+              <div class="float-left">
+                <a href="https://www.facebook.com/projectchangehk/" target="_blank">
+                  <span class="icon-fb"></span>
+                </a>
+              </div>
+              <div class="ms-2 float-left">
+                <a href="https://www.instagram.com/projectchangehk/" target="_blank">
+                  <span class="icon-ig"></span>
+                </a>
+              </div>
+              <div class="ms-2 float-left">
+                <a href="https://t.me/projectchange" target="_blank">
+                    <span class="icon-tg"></span>
+                </a>
+              </div>
+              <div class="ms-2 float-left">
+                <a href="https://www.youtube.com/@projectchange1472" target="_blank">
+                  <span class="icon-youtube"></span>
+                </a>
+              </div>
+              <div class="ms-2 float-left">
+                <a href="https://www.linkedin.com/company/projectchangehk" target="_blank">
+                  <span class="icon-linkedin"></span>
+                </a>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block pj-orange">SUBSCRIBE FOR NEWSLETTER</button>
+          </div>
+          <div class="col-lg-6">
+            <div class="row footer-box">
+              <div class="col">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="#">About Us</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#">Our Work</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#">News</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#">How You Can Help</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#">Our Partners</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-unstyled">
+                  <li class="mb-2">Contact Us</li>
+                  <li class="mb-2">(852) 9689 1439</li>
+                  <li class="mb-2">info@projectchange.hk</li>
+                  <li class="mb-2">Room RD20, 12/F, 133 Wai Yip Street, Kwun Tong, Kowloon</li>
+                </ul>
+              </div>
+            </div>
+            <p>© 2022 Citizen Action Design Limited</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+<script>
+// Get the text element
+const text = document.querySelector('.hero-section > .row');
+
+// Create the timeline for the animation
+const tl = gsap.timeline({ repeat: 0 });
+
+// Add the animations to the timeline
+tl.fromTo(text, { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 2, ease: 'power2.easeIn' });
+
+// Start the animation
+tl.play();
+
+gsap.registerPlugin(ScrollTrigger);
+
+const sections = [
+  {
+    trigger: "#bannerSliderInterval",
+    elements: ["#our-mission h1", "#our-mission p", "#our-mission .col-lg-6 img"],
+    animation: { opacity: 0, duration: 2 }
+  },
+  {
+    trigger: "#our-mission",
+    elements: ["#seek-help .contact-box", "#seek-help p", "#seek-help h1"],
+    animation: { x: 0, opacity: 0, duration: 2 }
+  },
+  {
+    trigger: "#seek-help",
+    elements: ["#latest-news > h1", "#latest-news .sticky-posts article", "#latest-news .latest-right article"],
+    animation: { y: 200, opacity: 0, duration: 3 }
+  },
+  {
+    trigger: "#latest-news",
+    elements: [".newsletter-box"],
+    animation: { y: 0, opacity: 0, duration: 2 }
+  },
+  {
+    trigger: ".newsletter-box",
+    elements: ["#our-works > h1", "#our-works .col-md-4:nth-child(1)", "#our-works .col-md-4:nth-child(2)", "#our-works .col-md-4:nth-child(3)"],
+    animation: { y: 150, opacity: 0, duration: 2 }
+  }
+];
+
+sections.forEach(section => {
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: section.trigger,
+      start: "bottom 90%",
+      end: "bottom 10%",
+      scrub: true
+    }
+  });
+
+  const animation = timeline.from(section.elements, section.animation);
+});	
+	
+</script>
+  <script src="./styles/js/script.js"></script>
+</html>
